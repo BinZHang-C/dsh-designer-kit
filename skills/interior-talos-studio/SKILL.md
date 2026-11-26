@@ -49,3 +49,5 @@ description: Talos Studio 数据化建模插件：DXF→payload→叠合门禁�
 
 1. 拷 `su-bridge/` 到 Plugins，重启，`:9876/health`
 2. `POST /build`；`POST /reload`；**勿用** `/ruby`
+
+> 本体路径由环境变量 `TALOS_STUDIO_ROOT` 指定；仓库里不放符号链接，也不写死本机路径。
