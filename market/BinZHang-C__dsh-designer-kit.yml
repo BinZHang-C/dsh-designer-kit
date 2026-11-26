@@ -1,5 +1,5 @@
-url: https://github.com/BinZHang-C/deepseek-
-name: BinZHang-C/deepseek-
+url: https://github.com/BinZHang-C/dsh-designer-kit
+name: BinZHang-C/dsh-designer-kit
 category: workflow
 description:
   en: 'Event-sourced project workbench for design teams: append-only log, dependency-based invalidation, proposals instead of notifications, and twelve design skills.'

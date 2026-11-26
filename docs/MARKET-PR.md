@@ -4,13 +4,13 @@
 
 ## 一、要加的文件
 
-路径：`data/plugins/BinZHang-C__deepseek-.yml`
+路径：`data/plugins/BinZHang-C__dsh-designer-kit.yml`
 
-内容（与本仓库 `market/BinZHang-C__deepseek-.yml` 一致）：
+内容（与本仓库 `market/BinZHang-C__dsh-designer-kit.yml` 一致）：
 
 ```yaml
-url: https://github.com/BinZHang-C/deepseek-
-name: BinZHang-C/deepseek-
+url: https://github.com/BinZHang-C/dsh-designer-kit
+name: BinZHang-C/dsh-designer-kit
 category: workflow
 description:
   en: 'Event-sourced project workbench for design teams: append-only log, dependency-based invalidation, proposals instead of notifications, and twelve design skills.'
@@ -61,6 +61,6 @@ Tool registration verified with a stub `ctx`: 5 tools registered, `designer_kit_
 
 ## 四、可选加分项
 
-- **Release tarball**：打 tag `v0.1.0`，上传 `dsh-designer-kit-0.1.0.tgz`，条目里加 `tarball: https://github.com/BinZHang-C/deepseek-/releases/latest/download/dsh-designer-kit-0.1.0.tgz`（`latest/download` 后不能带版本号）
+- **Release tarball**：打 tag `v0.1.0`，上传 `dsh-designer-kit-0.1.0.tgz`，条目里加 `tarball: https://github.com/BinZHang-C/dsh-designer-kit/releases/latest/download/dsh-designer-kit-0.1.0.tgz`（`latest/download` 后不能带版本号）
 - **screenshots.json**：仓库内放 `docs/shots/`（1–8 张），条目加 `screenshots: screenshots.json`
 - **npm**：`package.json` 已有 `repository` 指回本仓库时可直接 `npm publish`

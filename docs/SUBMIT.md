@@ -29,15 +29,15 @@ CI 只认三种硬条件，缺一个直接红叉：
 新建 `data/plugins/<owner>__dsh-designer-kit.yml`：
 
 ```yaml
-url: https://github.com/BinZHang-C/deepseek-
-name: BinZHang-C/deepseek-
+url: https://github.com/BinZHang-C/dsh-designer-kit
+name: BinZHang-C/dsh-designer-kit
 category: workflow
 description:
   en: 'Event-sourced project workbench for design teams: append-only log, dependency-based invalidation, proposals instead of notifications.'
   zh: '设计项目的事件源工作台：只增不改的事件流、按依赖算失效、用提案代替通知。'
 ```
 
-`market/BinZHang-C__deepseek-.yml` 已是填好的条目，直接改名为 `data/plugins/BinZHang-C__deepseek-.yml` 提交 PR 即可。只加一条，别顺手改别人的条目。
+`market/BinZHang-C__dsh-designer-kit.yml` 已是填好的条目，直接改名为 `data/plugins/BinZHang-C__dsh-designer-kit.yml` 提交 PR 即可。只加一条，别顺手改别人的条目。
 
 ## 三、可选但推荐
 
