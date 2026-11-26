@@ -1,0 +1,18 @@
+{
+  "name": "dsh-designer-kit",
+  "version": "0.1.0",
+  "description": "Event-sourced project workbench for design teams inside DeepSeek Harness: one append-only event log, nine-discipline dependency flow, proposals instead of notifications, plus twelve interior-design skills.",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "manifestVersion": 1
+  },
+  "engines": { "node": ">=20" },
+  "license": "MIT",
+  "keywords": ["dsh-plugin", "design-workflow", "event-sourcing", "interior-design"],
+  "files": ["index.js", "cordis.patch.yml", "README.md"]
+}

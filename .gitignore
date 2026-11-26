@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.DS_Store
+workbench/state/
+workbench/assets/
+workbench/tmp/
+workbench/deliverables/
+workbench/notes/
+workbench/transmittals/
+node_modules/
+*.log
+dist/

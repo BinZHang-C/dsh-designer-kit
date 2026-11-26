@@ -1,0 +1,81 @@
+# 触发规则 · 只读，改这里不用动代码
+# 每条规则只产生 proposal，不直接改状态。
+
+defaults:
+  max_per_day: 3          # 每项目每天最多几条主动提案
+  cooldown_hours: 24      # 同一指纹多久内不重复
+  expire_hours: 72        # 提案过期时间；沉默不等于同意
+  quiet_hours: [23, 8]    # 静默时段（本地时间，含起点不含终点）
+
+rules:
+  # ① 上游变更 → 返工提案（最该出声的一类）
+  - id: rework-after-change
+    on: condition.reopened
+    tier: suggest
+    when:
+      min_affected: 1
+    title: "结构/条件变更导致 {n} 项返工"
+    action:
+      type: reissue
+
+  # ② 卡在同一个条件太久 → 催办提案
+  - id: blocked-too-long
+    on: scan
+    tier: suggest
+    when:
+      min_days: 3
+      max_items: 4
+    title: "有 {n} 项卡在同一个条件超过 {days} 天"
+    action:
+      type: chase
+
+  # ③ 可开工却一直没动 → 提示（信息档，不需要回应）
+  - id: ready-idle
+    on: scan
+    tier: info
+    when:
+      min_days: 5
+      max_items: 4
+    title: "有 {n} 项可开工但 {days} 天没动"
+    action:
+      type: remind
+
+  # ④ 资料到达 → 只提示已入库，抽取由人招呼
+  - id: material-arrived
+    on: doc.ingested
+    tier: info
+    when:
+      min_affected: 1
+    title: "新资料入库：{n} 份"
+    action:
+      type: review
+
+  # ⑤ 承诺未兑现（decision 已久但下游没动）
+  - id: promise-stale
+    on: scan
+    tier: act
+    when:
+      min_days: 7
+      max_items: 3
+    title: "已确认的决定 {days} 天没有对应产出"
+    action:
+      type: escalate
+
+  - id: decision-unreviewed
+    on: scan
+    tier: suggest
+    title: "{n} 条决定超过 {days} 天没复盘"
+    when:
+      min_days: 7
+    action:
+      type: review
+
+  # ⑦ 带节点却过了节点还没提交 → 只能问，不能断言（节点是推算的）
+  - id: change-overdue
+    on: scan
+    tier: suggest
+    when:
+      max_items: 5
+    title: "{n} 个事项过了提交节点，最长过 {days} 天——是已提交没登记，还是确实晚了？"
+    action:
+      type: ask

@@ -1,0 +1,6 @@
+url: https://github.com/BinZHang-C/deepseek-
+name: BinZHang-C/deepseek-
+category: workflow
+description:
+  en: 'Event-sourced project workbench for design teams: append-only log, dependency-based invalidation, proposals instead of notifications, and twelve design skills.'
+  zh: '设计项目的事件源工作台：只增不改的事件流、按依赖算失效、用提案代替通知，附 12 个设计技能。'

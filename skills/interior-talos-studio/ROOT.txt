@@ -1,0 +1,2 @@
+ROOT=${DESIGNER_KIT_HOME:-$HOME/designer-kit}/workbench
+# 本仓库未附带 Talos Studio 本体（专用建模插件），使用前请把该技能指向你本机的安装目录。
